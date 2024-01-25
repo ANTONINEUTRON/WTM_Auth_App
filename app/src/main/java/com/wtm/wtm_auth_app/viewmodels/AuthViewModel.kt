@@ -26,8 +26,14 @@ class AuthViewModel: ViewModel() {
     fun signinUserWithGoogle(){
     }
 
+    fun logout(){
+        Firebase.auth.signOut()
+        isUserAuthenticated.value = false
+    }
+
     fun registerUser(fullname: String, email: String, password: String){
-        Firebase.auth.createUserWithEmailAndPassword(email, password)
+        Firebase.auth
+            .createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener {task->
                 if(task.isSuccessful){
                     isUserAuthenticated.value = true
@@ -37,5 +43,9 @@ class AuthViewModel: ViewModel() {
                     Log.e("SIGN In Not Successful", task.exception.toString())
                 }
             }
+    }
+
+    fun clearErrorMessage(){
+        errorMessage.value = ""
     }
 }

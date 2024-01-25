@@ -53,8 +53,7 @@ import com.wtm.wtm_auth_app.viewmodels.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeUiApi::class)
 @Composable
-fun LoginScreen(navController: NavController) {
-    val authViewModel: AuthViewModel = viewModel()
+fun LoginScreen(navController: NavController,authViewModel:AuthViewModel) {
     var userEmail by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 

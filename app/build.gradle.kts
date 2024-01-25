@@ -55,6 +55,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
 
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+
     implementation("androidx.compose.material:material-icons-extended-android:1.5.4")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
